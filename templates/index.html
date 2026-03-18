@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h1>Panel del equipo</h1>
+  <p>
+    Comparte este enlace en WhatsApp para que los jugadores dejen su opinion:
+    <strong>{{ request.host_url }}opinar</strong>
+  </p>
+  <p>
+    Luego pulsa <strong>Descargar Word</strong> para obtener el documento estructurado
+    con derechos y obligaciones.
+  </p>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Ultimas entradas</h2>
+    {% if entries %}
+      <ul class="entries">
+      {% for item in entries %}
+        <li>
+          <span class="tag {{ item.entry_type }}">{{ item.entry_type }}</span>
+          <strong>{{ item.text }}</strong><br>
+          <small>{{ item.author or "Anonimo" }} - {{ item.created_at }}</small>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No hay entradas todavia.</p>
+    {% endif %}
+  </article>
+
+  <article class="card">
+    <h2>Flujo recomendado</h2>
+    <ol>
+      <li>Comparte el link /opinar en el grupo.</li>
+      <li>Recoge propuestas durante varios dias.</li>
+      <li>Descarga el Word final y subelo a Teams.</li>
+    </ol>
+  </article>
+</section>
+{% endblock %}

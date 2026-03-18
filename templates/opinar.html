@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card form-wrap">
+  <h1>Enviar propuesta</h1>
+  <p>Tu opinion se guardara para construir el documento del equipo.</p>
+
+  <form method="post" class="form">
+    <label for="entry_type">Tipo</label>
+    <select name="entry_type" id="entry_type" required>
+      <option value="">Selecciona una opcion</option>
+      <option value="derecho">Derecho</option>
+      <option value="obligacion">Obligacion</option>
+    </select>
+
+    <label for="author">Nombre (opcional)</label>
+    <input type="text" name="author" id="author" placeholder="Ejemplo: Dani">
+
+    <label for="text">Propuesta</label>
+    <textarea name="text" id="text" rows="5" required placeholder="Escribe aqui tu derecho u obligacion..."></textarea>
+
+    <button type="submit">Guardar propuesta</button>
+  </form>
+</section>
+{% endblock %}

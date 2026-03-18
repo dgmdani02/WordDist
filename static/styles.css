@@ -1,0 +1,166 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #17202a;
+  --primary: #184c8e;
+  --ok: #0f7a33;
+  --error: #b42318;
+  --border: #dbe3ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #e7f0ff 0%, var(--bg) 40%);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 24px auto 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04);
+}
+
+.grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.entries {
+  padding-left: 18px;
+}
+
+.entries li {
+  margin-bottom: 14px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 6px;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tag.derecho {
+  background: #e8f5e9;
+  color: #1e7d34;
+}
+
+.tag.obligacion {
+  background: #fff3e0;
+  color: #9b5b00;
+}
+
+.form-wrap {
+  max-width: 720px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: white;
+  background: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.messages {
+  margin-bottom: 12px;
+}
+
+.flash {
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.flash-ok {
+  background: #e8f7ed;
+  color: var(--ok);
+}
+
+.flash-error {
+  background: #fff0f0;
+  color: var(--error);
+}
+
+@media (max-width: 780px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
